@@ -7,4 +7,4 @@ Disallow: /cart/     # if you don't want cart pages indexed
 Disallow: /checkout/
 Disallow: /search?
 
-Sitemap: https://www.lumiroz.com/sitemap.xml
+Sitemap: https://template-one.droploo.com/sitemap.xml
