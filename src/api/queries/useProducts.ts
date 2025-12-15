@@ -56,15 +56,20 @@ export const useGetCategoryProductsForHome = () => {
   return { data, isLoading, error };
 };
 
-export const useGetProductsByCategory = (id: string): QueryType => {
+export const useGetProductsByCategory = (
+  id: string,
+  filters: Record<string, unknown>
+): QueryType => {
   const navigate = useNavigate();
 
   if (!id) navigate("/");
 
   const { data, isLoading, error } = useQuery({
-    queryKey: ["get_products_by_category", id],
+    queryKey: ["get_products_by_category", JSON.stringify({ id, filters })],
     queryFn: async () => {
-      const response = await apiClient.get(`/products/category/${id}`);
+      const response = await apiClient.get(`/products/category/${id}`, {
+        params: filters,
+      });
       return response.data;
     },
   });
