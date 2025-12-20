@@ -3,7 +3,6 @@ import { BaseLayout } from "@/components/layout/base-layout";
 import { Skeleton } from "@/components/common/skeleton";
 import { CheckCircle, AlertCircle } from "lucide-react";
 import { motion } from "framer-motion";
-
 import { useGetOrderSuccessful } from "@/api/queries/userOrders";
 import type { InvoiceType } from "@/type";
 import {
@@ -170,7 +169,7 @@ export const OrderCompletePage = () => {
 const FlowerAnimation = () => {
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden">
-      {[...Array(50)].map((_, i) => (
+      {[...Array(100)].map((_, i) => (
         <img
           key={i}
           src="/flower.png"
